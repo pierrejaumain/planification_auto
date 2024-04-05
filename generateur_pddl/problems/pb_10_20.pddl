@@ -1,0 +1,7 @@
+(define (problem pb-10cities_20edges)
+    (:domain tps)
+    (:requirements :strips)
+    (:objects c0 c1 c2 c3 c4 c5 c6 c7 c8 c9)
+    (:init (connected c0 c1) (connected c0 c2) (connected c0 c3) (connected c0 c5) (connected c0 c8) (connected c1 c5) (connected c1 c6) (connected c2 c4) (connected c2 c5) (connected c3 c5) (connected c3 c9) (connected c4 c5) (connected c4 c7) (connected c4 c8) (connected c4 c9) (connected c5 c9) (connected c6 c7) (connected c6 c8) (connected c6 c9) (connected c8 c9) (in c0) (not (delivered c0)) (not (in c1)) (not (in c2)) (not (in c3)) (not (in c4)) (not (in c5)) (not (in c6)) (not (in c7)) (not (in c8)) (not (in c9)))
+    (:goal (and (in c0) (delivered c0) (delivered c1) (delivered c2) (delivered c3) (delivered c4) (delivered c5) (delivered c6) (delivered c7) (delivered c8) (delivered c9)))
+)
