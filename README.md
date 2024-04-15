@@ -1,6 +1,6 @@
 # Planification automatique Groupe 2 : Graph plan/SAT encoder
 
-L'objectif de ce projet est l'implémentation d'un planifieur classique. Notre choix s'est porté sur l'implémentation d'un GraphPlan que nous avons ensuite encodé au format SAT.
+L'objectif de ce projet est l'implémentation d'un planifieur classique. Notre choix s'est porté sur l'implémentation d'un GraphPlan que nous avons ensuite encodé au format SAT. Le solveur utilisé pour la résolution du problème SAT est Glucose3.
 
 
 ## Installation
@@ -10,7 +10,7 @@ L'objectif de ce projet est l'implémentation d'un planifieur classique. Notre c
    - `pddl`
    - `pddl-py`
 
-2. Le fichier Graph_Plan_Final gère la création du GraphPlane, satencoder.py l'encode et résoud le problème SAT associé.
+2. Le fichier Graph_Plan_Final gère la création du GraphPlae, satencoder.py l'encode et résoud le problème SAT associé.
 
 ## Utilisation
 
