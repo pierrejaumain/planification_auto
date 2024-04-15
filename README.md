@@ -4,13 +4,6 @@ L'objectif de ce projet est l'implémentation d'un planifieur classique. Notre c
 
 ## Installation et informations sur le code
 
-
-D'accord, voici la modification correspondante :
-
----
-
-# Performance Testing for Planner
-
 Ce projet vise à tester les performances d'un planificateur en fonction de différentes tailles de problèmes.
 
 ## Installation
