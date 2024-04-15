@@ -7,15 +7,13 @@ from Graph_Plan_final import GraphPlan
 
 
 
-path_domain = './domaines/domain.pddl'
-path_problem = './domaines/problem.pddl'
 
 
 if __name__ == "__main__":
 
     start = time()
-    domain_file = r"C:\Users\liams\Desktop\Cours\PO - Planification Automatique\generateur_pddl\domain.pddl"
-    problem_file = r"C:\Users\liams\Desktop\Cours\PO - Planification Automatique\generateur_pddl\problems\pb_facile.pddl"
+    domain_file = r"./generateur_pddl/tpsdomain.pddl"
+    problem_file = r"./generateur_pddl/pb_5_5.pddl"
     
     
     gp = GraphPlan(domain_file,problem_file)
@@ -32,10 +30,10 @@ if __name__ == "__main__":
         sat_enc = satEncoder(gp)
         #solver.append_formula(sat_enc.getCNF())
         solve = sat_enc.give_solution()
-    print(sat_enc.test)
-    print(sat_enc.dict)
+    #print(sat_enc.test)
+    #print(sat_enc.dict)
     end = time()
-    print(gp.graph)
+    #print(gp.graph)
     print(f"La planification a durée {end-start} secondes")
     print(sat_enc.give_plan())
     

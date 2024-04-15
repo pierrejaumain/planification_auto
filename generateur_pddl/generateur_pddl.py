@@ -40,10 +40,7 @@ domain = Domain("tps",
                 actions=[go_to, deliver]
 )
 
-
-
-with open("domain.pddl", "w") as file:
-    file.write(domain_to_string(domain))
+print(domain_to_string(domain))
 
 
 
@@ -52,7 +49,7 @@ with open("domain.pddl", "w") as file:
 
 #Génération d'un graphe (à changer pour que ça générer un graphe connexe quelconque)
 import matplotlib.pyplot as plt
-def generate_connected_graph(nb_edges, nb_nodes,c):
+def generate_connected_graph(nb_edges, nb_nodes):
     G = nx.Graph()
     G.add_node(0)
     for i in range(1, nb_nodes):
@@ -61,16 +58,18 @@ def generate_connected_graph(nb_edges, nb_nodes,c):
         G.add_edge(i, nodes_for_edge)
     
     while G.number_of_edges() < nb_edges:
-        node1 = random.randint(0, nb_nodes - 1)
-        node2 = random.randint(0, nb_nodes - 1)
+        node1 = random.randint(0, nb_nodes-1)
+        node2 = random.randint(0, nb_nodes-1)
         while node1 == node2 or G.has_edge(node1, node2):
             node1 = random.randint(0, nb_nodes - 1)
             node2 = random.randint(0, nb_nodes - 1)
         G.add_edge(node1, node2)
     
     
-    
     G = nx.relabel_nodes(G, {i: c[i] for i in range(nb_nodes)})
+    #A décommenter si on souhaite afficher le problème créé
+    #nx.draw(G, with_labels=True)
+    #plt.show()
     
     return G
         
@@ -80,39 +79,31 @@ def extract_connections(graph):
     connections = []
     for edge in graph.edges:
         connections.append(connected(edge[0], edge[1]))
+        connections.append(connected(edge[1], edge[0]))
     return connections
 
-def generate_problem(num_cities, num_edges):
-    c = [Constant("c"+str(i)) for i in range(num_cities)]
-    graph = generate_connected_graph(num_edges, num_cities,c)
-    connections = extract_connections(graph)
+# Nombre de villes
+num_cities = 20
+num_edges = 50
+c = [Constant("c"+str(i)) for i in range(num_cities)]
+graph = generate_connected_graph(num_edges, num_cities)
+connections = extract_connections(graph)
 
 
-    initial_state = [in_(c[0]), ~delivered(c[0])] + [~in_(c[i]) for i in range(1, num_cities)] + connections
+initial_state = [in_(c[0]), ~delivered(c[0])] + [~in_(c[i]) for i in range(1, num_cities)] + connections
 
-    goal_state = in_(c[0])
-    for i in range(0, num_cities):
-        goal_state = goal_state & delivered(c[i])
+goal_state = in_(c[0])
+for i in range(num_cities):
+    goal_state = goal_state & delivered(c[i])
 
-    # Create the problem
-    problem = Problem(
-        "pb-" + str(num_cities) + "cities_" + str(num_edges) + "edges",
-        domain=domain, 
-        requirements=requirements, 
-        objects=c,
-        init=initial_state,  
-        goal=goal_state
-    )
+# Create the problem
+problem = Problem(
+    "pb-" + str(num_cities) + "cities",
+    domain=domain, 
+    requirements=requirements, 
+    objects=c,
+    init=initial_state,  
+    goal=goal_state
+)
 
-    return problem
-
-
-
-with open("problems/pb_5_5.pddl", "w") as file:
-    file.write(problem_to_string(generate_problem(5, 5)))
-
-with open("problems/pb_10_20.pddl", "w") as file:
-    file.write(problem_to_string(generate_problem(10, 20)))
-
-with open("problems/pb_20_50.pddl", "w") as file:
-    file.write(problem_to_string(generate_problem(20, 50)))
+print(problem_to_string(problem))

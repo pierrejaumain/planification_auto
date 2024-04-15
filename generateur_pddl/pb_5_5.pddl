@@ -1,0 +1,7 @@
+(define (problem pb-5cities)
+    (:domain tpsdomain)
+    (:requirements :strips)
+    (:objects c0 c1 c2 c3 c4)
+    (:init (connected c0 c1) (connected c0 c2) (connected c1 c0) (connected c1 c3) (connected c2 c0) (connected c2 c3) (connected c2 c4) (connected c3 c1) (connected c3 c2) (connected c4 c2) (in c0) (not (delivered c0)) (not (in c1)) (not (in c2)) (not (in c3)) (not (in c4)))
+    (:goal (and (in c0) (delivered c0) (delivered c1) (delivered c2) (delivered c3) (delivered c4)))
+)
