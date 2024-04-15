@@ -2,9 +2,6 @@
 
 L'objectif de ce projet est l'implémentation d'un planifieur classique. Notre choix s'est porté sur l'implémentation d'un GraphPlan que nous avons ensuite encodé au format SAT.
 
-## Installation et informations sur le code
-
-Ce projet vise à tester les performances d'un planificateur en fonction de différentes tailles de problèmes.
 
 ## Installation
 
