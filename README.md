@@ -5,7 +5,7 @@ L'objectif de ce projet est l'implémentation d'un planifieur classique. Notre c
 
 ## Installation
 
-1. Assurez-vous d'avoir les bibliothèques suivantes installées (l'ensemble du code a été testé sur Python 3.8 mais ne devrait pas posé de problème de version) :
+1. Assurez-vous d'avoir les bibliothèques suivantes installées (l'ensemble du code a été testé sur Python 3.8 mais ne devrait pas poser de problème de version) :
    - `pysat`
    - `pddl`
    - `pddl-py`
