@@ -39,6 +39,7 @@ Le tableau suivant récapitule les performances du planificateur en fonction de 
 | P1                 | 3.82                               |
 | P2                 | 3.99                               |
 | P3                 | 66.996                             |
+| P4                 | 953.69                             |
 
 
 
