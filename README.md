@@ -21,12 +21,25 @@ python main.py
 
 ## Tableau des performances
 
-Le tableau suivant récapitule les performances du planificateur en fonction de différentes tailles de problèmes :
+Le tableau suivant récapitule les performances du planificateur en fonction de différentes tailles de problèmes sur notre problème TSP et sur un autre problème Labyrinthe :
+
+### TSP : Voyageur de commerce revisité
 
 | Taille du problème | Temps d'exécution moyen (secondes) |
 |--------------------|------------------------------------|
 | Petit (5 villes )  | 0.56                               |
 | Moyen (10 villes)  | 2.27                               |
 | Grand (20 villes)  | 16.16                              |
+
+### Labyrinthe 
+
+| Taille du problème | Temps d'exécution moyen (secondes) |
+|--------------------|------------------------------------|
+| P0                 | 9.62                               |
+| P1                 | 3.82                               |
+| P2                 | 3.99                               |
+| P3                 | 66.996                             |
+
+
 
 ---
