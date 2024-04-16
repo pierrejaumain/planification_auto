@@ -30,7 +30,7 @@ Le tableau suivant récapitule les performances du planificateur en fonction de 
 | Petit (5 villes )  | 0.56                               |
 | Moyen (10 villes)  | 2.27                               |
 | Moyen (20 villes)  | 16.16                              |
-| Gran  (50 villes)  | 953.69                             |
+| Grand  (50 villes) | 953.69                             |
 
 ### Labyrinthe 
 
